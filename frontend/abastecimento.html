@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrar Abastecimento - FuelManager Pro</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>Registrar Abastecimento</h1>
+            <button class="btn btn-secondary" onclick="sair()">Sair</button>
+        </header>
+
+        <nav class="nav">
+            <a href="dashboard.html">Dashboard</a>
+            <a href="abastecimento.html">Registrar Abastecimento</a>
+            <a href="meus-abastecimentos.html">Meus Abastecimentos</a>
+            <a href="estatisticas.html">Estatísticas</a>
+            <a href="clima.html">Clima e Viagem</a>
+        </nav>
+
+        <form id="abastecimentoForm">
+            <div class="form-group">
+                <label for="data">Data</label>
+                <input type="date" id="data" required>
+            </div>
+            <div class="form-group">
+                <label for="posto">Nome do Posto</label>
+                <input type="text" id="posto" required>
+            </div>
+            <div class="form-group">
+                <label for="cepPosto">CEP do Posto (Opcional - com busca)</label>
+                <input type="text" id="cepPosto" placeholder="00000-000">
+                <button type="button" class="btn btn-secondary" id="btnBuscarCEP" style="width: auto; margin-top: 5px;">Buscar Endereço</button>
+                <input type="text" id="enderecoPosto" placeholder="Endereço (automático)" readonly>
+            </div>
+            <div class="form-group">
+                <label for="tipoCombustivel">Tipo de Combustível</label>
+                <select id="tipoCombustivel" required>
+                    <option value="">Selecione...</option>
+                    <option value="Gasolina Comum">Gasolina Comum</option>
+                    <option value="Gasolina Aditivada">Gasolina Aditivada</option>
+                    <option value="Etanol">Etanol</option>
+                    <option value="Diesel S10">Diesel S10</option>
+                    <option value="GNV">GNV</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="litros">Litros (min 0.01)</label>
+                <input type="number" id="litros" step="0.01" min="0.01" required>
+            </div>
+            <div class="form-group">
+                <label for="precoPorLitro">Preço por Litro (min 0.01)</label>
+                <input type="number" id="precoPorLitro" step="0.01" min="0.01" required>
+            </div>
+            <div class="form-group">
+                <label for="valorTotal">Valor Total (calculado automaticamente)</label>
+                <input type="number" id="valorTotal" readonly>
+            </div>
+             <div class="form-group">
+                <label for="quilometragem">Quilometragem Atual</label>
+                <input type="number" id="quilometragem" step="1" min="0" required>
+            </div>
+            <div class="form-group checkbox">
+                <input type="checkbox" id="tanqueCheio">
+                <label for="tanqueCheio">Tanque Cheio</label>
+            </div>
+            <div class="form-group">
+                <label for="consumoMedio">Consumo Médio (calculado se tanque cheio)</label>
+                <input type="number" id="consumoMedio" readonly>
+            </div>
+            <div class="form-group">
+                <label for="observacoes">Observações (opcional)</label>
+                <textarea id="observacoes"></textarea>
+            </div>
+
+            <div id="errorMessage" class="error-message" style="display: none;"></div>
+            <button type="submit" class="btn btn-primary">Salvar Abastecimento</button>
+        </form>
+    </div>
+    <script src="js/api.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/abastecimento.js"></script>
+</body>
+</html>

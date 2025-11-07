@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meus Abastecimentos - FuelManager Pro</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>Meus Abastecimentos</h1>
+            <button class="btn btn-secondary" onclick="sair()">Sair</button>
+        </header>
+
+        <nav class="nav">
+            <a href="dashboard.html">Dashboard</a>
+            <a href="abastecimento.html">Registrar Abastecimento</a>
+            <a href="meus-abastecimentos.html">Meus Abastecimentos</a>
+            <a href="estatisticas.html">Estatísticas</a>
+            <a href="clima.html">Clima e Viagem</a>
+        </nav>
+
+        <form id="filtroForm" class="filter-form">
+            <div class="form-group">
+                <label for="filtroTipo">Por combustível</label>
+                <select id="filtroTipo">
+                    <option value="">Todos</option>
+                    <option value="Gasolina Comum">Gasolina Comum</option>
+                    <option value="Gasolina Aditivada">Gasolina Aditivada</option>
+                    <option value="Etanol">Etanol</option>
+                    <option value="Diesel S10">Diesel S10</option>
+                    <option value="GNV">GNV</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="filtroPosto">Por nome do posto</label>
+                <input type="text" id="filtroPosto" placeholder="Busca parcial...">
+            </div>
+            <div class="form-group">
+                <label for="filtroDataInicio">De:</label>
+                <input type="date" id="filtroDataInicio">
+            </div>
+            <div class="form-group">
+                <label for="filtroDataFim">Até:</label>
+                <input type="date" id="filtroDataFim">
+            </div>
+            <div class="button-group" style="flex-direction: column;">
+                <button type="submit" class="btn btn-primary">Aplicar Filtros</button>
+                <button type="button" class="btn btn-secondary" id="btnLimparFiltros">Limpar Filtros</button>
+            </div>
+        </form>
+        
+        <div class="card-container" style="margin-bottom: 2rem;">
+            <div class="card">
+                <h3>Total Gasto (Filtrado)</h3>
+                <p id="totalGastoFiltrado">R$ 0,00</p>
+            </div>
+             <div class="card">
+                <h3>Total Litros (Filtrado)</h3>
+                <p id="totalLitrosFiltrado">0 L</p>
+            </div>
+             <div class="card">
+                <h3>Nº de Abastecimentos</h3>
+                <p id="totalAbastecimentosFiltrados">0</p>
+            </div>
+        </div>
+
+        <div id="listaAbastecimentos">
+            </div>
+
+    </div>
+    <script src="js/auth.js"></script>
+    <script src="js/meus-abastecimentos.js"></script>
+</body>
+</html>

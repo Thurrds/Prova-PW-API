@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clima e Viagem - FuelManager Pro</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>Clima e Viagem</h1>
+            <button class="btn btn-secondary" onclick="sair()">Sair</button>
+        </header>
+
+        <nav class="nav">
+            <a href="dashboard.html">Dashboard</a>
+            <a href="abastecimento.html">Registrar Abastecimento</a>
+            <a href="meus-abastecimentos.html">Meus Abastecimentos</a>
+            <a href="estatisticas.html">Estatísticas</a>
+            <a href="clima.html">Clima e Viagem</a>
+        </nav>
+
+        <h3>Seção 1: Clima na sua cidade</h3>
+        <button id="btnCarregarClima" class="btn btn-primary" style="width: auto;">Carregar Clima da Minha Cidade</button>
+        <div id="climaUsuarioResult" class="card" style="margin-top: 1rem; display: none;"></div>
+
+        <h3 style="margin-top: 2rem;">Seção 2: Buscar outra cidade</h3>
+        <div class="form-group" style="display: flex; gap: 10px;">
+            <input type="text" id="inputNomeCidade" placeholder="Digite o nome da cidade" style="width: 70%;">
+            <button id="btnBuscarCidade" class="btn btn-primary" style="width: 30%;">Buscar</button>
+        </div>
+        <div id="climaBuscaResult" class="card" style="margin-top: 1rem; display: none;"></div>
+
+        <h3 style="margin-top: 2rem;">Seção 3: Calculadora de viagem</h3>
+        <div class="form-group">
+            <label for="inputDistancia">Distância (km)</label>
+            <input type="number" id="inputDistancia" min="0">
+        </div>
+        <div class="form-group">
+            <label for="inputConsumoMedio">Consumo médio do veículo (km/l)</label>
+            <input type="number" id="inputConsumoMedio" min="0" step="0.1">
+        </div>
+        <div class="form-group">
+            <label for="inputPrecoCombustivel">Preço combustível (R$)</label>
+            <input type="number" id="inputPrecoCombustivel" min="0" step="0.01">
+        </div>
+        <button id="btnCalcularViagem" class="btn btn-primary">Calcular</button>
+        
+        <div id="calculadoraResult" style="margin-top: 1rem; display: none;">
+            <p><strong>Litros necessários:</strong> <span id="litrosNecessarios"></span> L</p>
+            <p><strong>Custo total:</strong> R$ <span id="custoTotal"></span></p>
+            <p><strong>Custo com margem 15%:</strong> R$ <span id="custoMargem"></span></p>
+        </div>
+
+    </div>
+    <script src="js/api.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/clima.js"></script>
+</body>
+</html>

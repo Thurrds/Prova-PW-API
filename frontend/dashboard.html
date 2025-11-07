@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - FuelManager Pro</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1 id="welcomeMessage"></h1>
+            <button class="btn btn-secondary" onclick="sair()">Sair</button>
+        </header>
+
+        <nav class="nav">
+            <a href="dashboard.html">Dashboard</a>
+            <a href="abastecimento.html">Registrar Abastecimento</a>
+            <a href="meus-abastecimentos.html">Meus Abastecimentos</a>
+            <a href="estatisticas.html">Estatísticas</a>
+            <a href="clima.html">Clima e Viagem</a>
+        </nav>
+
+        <h2>Resumo Geral</h2>
+        <div class="card-container">
+            <div class="card">
+                <h3>Total de Abastecimentos</h3>
+                <p id="totalAbastecimentos">0</p>
+            </div>
+            <div class="card">
+                <h3>Gasto Total</h3>
+                <p id="gastoTotal">R$ 0,00</p>
+            </div>
+            <div class="card">
+                <h3>Total de Litros</h3>
+                <p id="totalLitros">0 L</p>
+            </div>
+            <div class="card">
+                <h3>Consumo Médio (Tanque Cheio)</h3>
+                <p id="consumoMedio">0 km/l</p>
+            </div>
+        </div>
+    </div>
+    <script src="js/auth.js"></script> 
+    <script src="js/dashboard.js"></script>
+</body>
+</html>
